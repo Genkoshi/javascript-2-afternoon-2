@@ -56,6 +56,7 @@ function looper(family){
 }
 ////////// PROBLEM 4 //////////
 
+
 // Do not edit the code below.
 var letters = ['A', 'B', 'C', 'D', 'E'];
 // Do not edit the code above.
@@ -105,7 +106,9 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 */
 
 //Code Here
-
+function divider(numbersArray){
+  return [numbersArray.filter(x => x%2 == 0), numbersArray.filter(x => x%2 !== 0)]
+}
 
 
 ////////// PROBLEM 7 //////////
@@ -126,7 +129,14 @@ var getRandomArbitrary = function() {
 */
 
 //Code Here
-
+function finder(arr){
+  for (let i = 0; i < arr.length; i++) {
+      if (getRandomArbitrary() == arr[i]){
+        return true;
+      }
+  }
+  return false;
+}
 
 
 ////////// PROBLEM 8 //////////
@@ -153,7 +163,23 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+function removeItem(myGroceryList, item){
+if(!!item){
+  for (let i = 0; i < myGroceryList.length; i++) {
+      if(myGroceryList[i] === item){
+       myGroceryList.splice(i, 1);
+       return myGroceryList;
+      }else return myGroceryList;    
+  }
+}else return []
+}
 
+function addItem(myGroceryList, item){
+      if (!!item){
+        myGroceryList.push(item);
+        return myGroceryList;
+      }else return [];
+}
 
 
 ////////// PROBLEM 9 //////////
@@ -163,7 +189,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
-
+function maker(){
+  var arr = []
+  for (let i = 1; i <= 215; i++) {
+      arr.push(i)
+  }
+  return arr;
+}
 
 
 ////////// PROBLEM 10 //////////
@@ -179,7 +211,7 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 */
   
 //Code Here
-
+var addTen = (numbers) => numbers.map(x => Number(x) + 10);
 
 
 ////////// PROBLEM 11 //////////
@@ -204,7 +236,7 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+var longer = (arr1, arr2) => arr1.length>arr2.length ? arr1 : arr2;
 
 
 /*
@@ -215,9 +247,11 @@ for(var i = 0; i < num2; i++){
   Example: var arr1 = [1,2,3,4]; var arr2 = [2,4,5,6]; newArray // [2,4]
 */
 
+
 //Code Here
-
-
+function both(arr1, arr2){
+  return arr1.filter(val => arr2.includes(val))
+}
 
 ////////// PROBLEM 12 //////////
 
@@ -256,7 +290,7 @@ var colt = {
 */
 
 //Code Here
-
+console.log(devMountainEmployees.push(tyler, cahlan, ryan, colt));
 
 
 /*
@@ -265,8 +299,7 @@ var colt = {
 */
 
 //Code Here
-
-
+devMountainEmployees = devMountainEmployees.filter(x => x.name !== "Cahlan");
 
 ////////// PROBLEM 13 //////////
 
@@ -277,7 +310,7 @@ var colt = {
 */
 
 //Code Here
-
+var users = [];
 
 
 /*
@@ -296,7 +329,7 @@ var user1 = {
 // Do not edit the code above.
 
 //Code Here
-
+users.push({name: '', email: '', password: '', username: ''}, {name: '', email: '', password: '', username: ''}, user1 );
 
 
 /*
@@ -310,7 +343,11 @@ var user1 = {
 */
 
 //Code Here
-
+for (let i = 0; i < users.length; i++) {
+    if(users[i].email == 'tylermcginnis33@gmail.com'){
+        users.splice(i, 1);
+    }
+}
 
 
 /*
